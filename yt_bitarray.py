@@ -29,7 +29,7 @@ class YTBitArray(object):
 
     def convert_int_to_choices(self, value):
         choices = []
-        binary_string = bin(value)[2:]
+        binary_string = bin(value)[2:].zfill(self.choices_count)
         for index, selected in enumerate(binary_string):
             if selected == "1":
                 choices.append(
